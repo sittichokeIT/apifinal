@@ -4,17 +4,17 @@ import { Column, Entity, PrimaryColumn } from 'typeorm';
 @Entity()
 export class Flight {
     @PrimaryColumn()
-    flight_id: number
+    flight_id: string
 
     @Column({nullable: false})
-    from: string
+    from_: string
 
     @Column({nullable: false})
-    to: string
+    to_: string
 
     @Column({nullable: false})
     departure: string
 
     @Column({nullable: false})
-    arrival: string
+    return: string
 }

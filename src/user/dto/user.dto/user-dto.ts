@@ -3,6 +3,9 @@ import { IsNumber, IsString } from "class-validator";
 
 export class UserDto {
     @IsString()
+    user_id: string
+    
+    @IsString()
     fullName: string
 
     @IsString()
@@ -18,7 +21,7 @@ export class UserDto {
     departure: string
 
     @IsString()
-    arrival: string
+    return: string
 
     @IsNumber()
     adults: number
@@ -28,4 +31,7 @@ export class UserDto {
 
     @IsNumber()
     infants: number
+
+    @IsString()
+    flight_id: string
 }

@@ -3,14 +3,17 @@ import { IsString } from "class-validator";
 
 export class FlightDto {
     @IsString()
-    from: string
+    flight_id: string;
 
     @IsString()
-    to: string
+    from_: string
+
+    @IsString()
+    to_: string
 
     @IsString()
     departure: string
 
     @IsString()
-    arrival: string
+    return: string
 }

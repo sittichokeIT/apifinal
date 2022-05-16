@@ -16,4 +16,11 @@ export class FlightController {
     loadAll(): Promise<FlightDto[]>{
         return this.flightService.loadAll()
     }
+
+    @Post('checkflight')
+    async checkflight(@Body() data){
+        if(data){
+            return this.flightService.checkflight(data);
+        }
+    }
 }

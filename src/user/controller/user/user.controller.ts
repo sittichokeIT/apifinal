@@ -8,7 +8,7 @@ export class UserController {
     constructor(private userService: UserService){}
 
     @Post()
-    create(@Body() user: UserDto): Promise<UserDto>{
+    create(@Body() user: UserDto){
         return this.userService.create(user)
     }
 
@@ -16,4 +16,19 @@ export class UserController {
     loadAll(): Promise<UserDto[]>{
         return this.userService.loadAll()
     }
+
+    @Post("updateTime")
+    async updateTime(@Body() data: UserDto){
+        if(data){
+            return this.userService.updateTime(data)
+        }
+    }
+
+    @Post("deleteFlight")
+    async deleteFlight(@Body() data: UserDto){
+        if(data){
+            return this.userService.deleteflight(data)
+        }
+    }
+
 }

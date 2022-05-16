@@ -1,10 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 /* eslint-disable prettier/prettier */
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn()
-    user_id: number
+    @PrimaryColumn()
+    user_id: string
 
     @Column({nullable: false})
     fullName: string
@@ -22,7 +22,7 @@ export class User {
     departure: string
 
     @Column({nullable: false})
-    arrival: string
+    return: string
 
     @Column({nullable: false})
     adults: number
@@ -32,4 +32,7 @@ export class User {
 
     @Column({nullable: false})
     infants: number
+
+    @Column({nullable: false})
+    flight_id: string
 }
