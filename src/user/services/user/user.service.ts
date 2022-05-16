@@ -74,8 +74,8 @@ export class UserService {
                             await this.userRepo.query("UPDATE `flight_seats` SET `seat` = ? WHERE `id` = ? AND `flight_id` = ?",
                             [users.user_id, findSeat[i].id, users.flight_id])
                             //update ที่นั่งใน user
-                            await this.userRepo.query("UPDATE `user` SET `flight_id` = ? WHERE `user_id` = ?",
-                            [users.flight_id, users.user_id])
+                            await this.userRepo.query("UPDATE `user` SET `flight_id` = ?, `departure` = ?, `return` = ? WHERE `user_id` = ?",
+                            [users.flight_id, users.departure, users.return, users.user_id])
                             return JSON.stringify({ flight_id: users.flight_id, seat_id: findSeat[i].id, user_id: users.user_id })
                         }
                     }
